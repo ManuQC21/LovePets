@@ -8,4 +8,6 @@ public interface MascotaService {
     MascotaDto createMascota(MascotaDto mascotaDto);
     List<MascotaDto> getALl();
     MascotaDto getOne(Long id);
+    MascotaDto updateMascota(MascotaDto mascotaDto);
+    Void deleteMascota(Long id);
 }

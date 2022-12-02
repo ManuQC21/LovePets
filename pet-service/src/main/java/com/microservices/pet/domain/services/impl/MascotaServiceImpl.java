@@ -32,4 +32,17 @@ public class MascotaServiceImpl implements MascotaService {
     public MascotaDto getOne(Long id) {
         return null;
     }
+
+    @Override
+    public MascotaDto updateMascota(MascotaDto mascotaDto) {
+        Mascota mascota = MascotaMapper.INSTANCE.mascotaDtoToMascota(mascotaDto);
+        Mascota savedToDb = this.mascotaRepository.save(mascota);
+        return MascotaMapper.INSTANCE.mascotaToMascotaDtO(savedToDb);
+    }
+
+    @Override
+    public Void deleteMascota(Long id) {
+        this.mascotaRepository.deleteById(id);
+        return null;
+    }
 }
