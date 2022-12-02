@@ -39,4 +39,11 @@ public class SolicitudServiceImpl implements SolicitudService {
         this.solicitudRepository.deleteById(id);
         return null;
     }
+
+    @Override
+    public Solicitud declinar(Long id) {
+        Solicitud solicitud = this.solicitudRepository.getById(id);
+        solicitud.setAceptada(false);
+        return solicitud;
+    }
 }

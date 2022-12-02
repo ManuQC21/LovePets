@@ -57,4 +57,9 @@ public class SolicitudControllerImpl implements SolicitudController {
         this.solicitudService.deleteSolicitud(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @Override
+    public ResponseEntity<Solicitud> declinar(Long id) {
+        return new ResponseEntity<>(this.solicitudService.declinar(id), HttpStatus.OK);
+    }
 }

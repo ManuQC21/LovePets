@@ -26,4 +26,7 @@ public interface SolicitudController {
     @DeleteMapping(path = "/{id}")
     ResponseEntity<Void> delete(@PathVariable("id") Long id);
 
+    @PatchMapping(path = "/{id}/declinar")
+    ResponseEntity<Solicitud> declinar(@PathVariable("id") Long id);
+
 }
