@@ -34,4 +34,9 @@ public class AdoptanteRepositoryImpl implements AdoptanteRepository {
     public void deleteById(Long id) {
         this.adoptanteJpaRepository.deleteById(id);
     }
+
+    @Override
+    public Adoptante getByUserId(Long id) {
+        return this.adoptanteJpaRepository.getByUsuarioId(id);
+    }
 }
