@@ -6,18 +6,11 @@ spring:
   cloud:
     gateway:
       routes:
-        ## USER SERVICE
+        ## PET SERVICE
       - id: pet-service
         uri: lb://pet-service
         predicates:
           - Path=/api/**
-        filters:
-          - StripPrefix=1
-        ## FUND TRANSFER SERVICE
-      - id: internet-banking-fund-transfer-service
-        uri: lb://internet-banking-fund-transfer-service
-        predicates:
-          - Path=/fund-transfer/**
         filters:
           - StripPrefix=1
 

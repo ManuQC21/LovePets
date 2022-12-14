@@ -24,7 +24,6 @@ public class Voluntario {
     private Admin admin;
 
     @Column(name = "nombres")
-
     private String nombres;
 
     @Column(name = "edad")

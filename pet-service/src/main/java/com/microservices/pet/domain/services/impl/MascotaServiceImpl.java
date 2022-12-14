@@ -8,6 +8,7 @@ import com.microservices.pet.domain.services.MascotaService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -25,7 +26,13 @@ public class MascotaServiceImpl implements MascotaService {
 
     @Override
     public List<MascotaDto> getALl() {
-        return null;
+        List<MascotaDto> retorno = new ArrayList<>();
+        List<Mascota> retrieved = this.mascotaRepository.getAll();
+        for (Mascota mascota: retrieved) {
+            MascotaDto mascotaDTO = MascotaMapper.INSTANCE.mascotaToMascotaDtO(mascota);
+            retorno.add(mascotaDTO);
+        }
+        return retorno;
     }
 
     @Override
