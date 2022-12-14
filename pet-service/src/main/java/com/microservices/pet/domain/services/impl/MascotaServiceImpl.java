@@ -37,7 +37,9 @@ public class MascotaServiceImpl implements MascotaService {
 
     @Override
     public MascotaDto getOne(Long id) {
-        return null;
+        Mascota fromDb = this.mascotaRepository.getById(id);
+        MascotaDto mascotaDto = MascotaMapper.INSTANCE.mascotaToMascotaDtO(fromDb);
+        return mascotaDto;
     }
 
     @Override

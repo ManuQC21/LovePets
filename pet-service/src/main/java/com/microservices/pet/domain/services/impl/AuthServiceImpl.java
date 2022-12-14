@@ -2,6 +2,7 @@ package com.microservices.pet.domain.services.impl;
 
 import com.microservices.pet.domain.mappers.UsuarioMapper;
 import com.microservices.pet.domain.models.dto.UsuarioDto;
+import com.microservices.pet.domain.models.entities.Admin;
 import com.microservices.pet.domain.models.entities.Adoptante;
 import com.microservices.pet.domain.models.entities.Usuario;
 import com.microservices.pet.domain.models.requests.ChangePasswordRequest;
@@ -46,8 +47,26 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    public Usuario login(LoginRequest loginRequest) {
-        return null;
+    public UsuarioDto login(LoginRequest loginRequest) {
+        Usuario usuario = this.usuarioRepository.getByUsername(loginRequest.getUsername());
+        if (usuario != null) {
+            UsuarioDto usuarioDto = UsuarioMapper.INSTANCE.usuarioToUsuarioDto(usuario);
+            Admin admin = this.adminRepository.getByUserId(usuario.getId());
+            Adoptante adoptante = this.adoptanteRepository.getByUserId(usuario.getId());
+            if (adoptante != null) {
+                usuarioDto.setIdAdoptante(adoptante.getId());
+            }
+            if (admin != null) {
+                usuarioDto.setIdAdmin(admin.getId());
+            }
+            log.info(usuario.toString());
+            log.info(loginRequest.toString());
+            log.info(usuarioDto.toString());
+            if (loginRequest.getPassword().equals(usuario.getPassword())) {
+                return usuarioDto;
+            }
+        }
+        throw new InvalidParameterException("NOT FOUND");
     }
 
     @Override

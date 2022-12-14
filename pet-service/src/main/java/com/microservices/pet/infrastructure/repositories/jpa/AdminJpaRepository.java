@@ -4,4 +4,5 @@ import com.microservices.pet.domain.models.entities.Admin;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AdminJpaRepository extends JpaRepository<Admin, Long> {
+    Admin getByUsuarioId(Long id);
 }

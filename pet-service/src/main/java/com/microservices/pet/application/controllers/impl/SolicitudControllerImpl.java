@@ -6,6 +6,7 @@ import com.microservices.pet.domain.services.SolicitudService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,6 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "requests")
 @AllArgsConstructor
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class SolicitudControllerImpl implements SolicitudController {
 
     private SolicitudService solicitudService;

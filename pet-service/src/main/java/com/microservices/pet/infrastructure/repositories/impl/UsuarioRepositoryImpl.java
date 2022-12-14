@@ -34,4 +34,9 @@ public class UsuarioRepositoryImpl implements UsuarioRepository {
     public void deleteById(Long id) {
         this.usuarioJpaRepository.deleteById(id);
     }
+
+    @Override
+    public Usuario getByUsername(String username) {
+        return this.usuarioJpaRepository.getByEmail(username);
+    }
 }
