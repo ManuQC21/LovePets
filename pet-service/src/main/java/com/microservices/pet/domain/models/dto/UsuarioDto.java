@@ -11,8 +11,5 @@ import java.io.Serializable;
 @Data
 public class UsuarioDto implements Serializable {
     private final Long id;
-    private Long idAdoptante;
-    private Long idAdmin;
     private final String email;
-    private String[] roles;
 }

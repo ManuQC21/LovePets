@@ -8,7 +8,7 @@ import com.microservices.pet.domain.models.requests.LoginRequest;
 
 public interface AuthService {
     Usuario registerUser(CreateUserRequest createUserRequest);
-    UsuarioDto login(LoginRequest loginRequest);
+    Usuario login(LoginRequest loginRequest);
 
     UsuarioDto changePassword(ChangePasswordRequest changePasswordRequest);
 
