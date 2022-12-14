@@ -34,4 +34,12 @@ public class AdminRepositoryImpl implements AdminRepository {
     public void deleteById(Long id) {
         this.adminJpaRepository.deleteById(id);
     }
+<<<<<<< HEAD
+=======
+
+    @Override
+    public Admin getByUserId(Long id) {
+        return this.adminJpaRepository.getByUsuarioId(id);
+    }
+>>>>>>> 203310abeb0059f3056c70490ce07963e6bd253c
 }
