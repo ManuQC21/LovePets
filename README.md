@@ -14,14 +14,13 @@ Las herramientas utilizadas en la construcción del proyecto son:
 
 ## Autores(as) ✒️
 
-Grupo B
-* Siccha Siccha, Luis
-* Linares Cortez, Christian
-* Cornejo Adrianzen, Lourdes
-* Remuzgo Cesias, Vivian
-* Grados Urtecho, Gabriel
-* Ibañez Arteaga, Kevin
-* Desrosiers Pérez, Patrick
+Grupo 4
+
+- Bravo Flores Gean
+- Jara Ulloa Jean
+- Vallejos Romero Any
+- Quispe Cueva Manuel
+- Blas Vera Maria Dariana
 
 ## Diagrama
 
